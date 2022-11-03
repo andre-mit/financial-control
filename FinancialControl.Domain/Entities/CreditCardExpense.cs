@@ -10,8 +10,6 @@ namespace FinancialControl.Domain.Entities
     {
         public uint Installments { get; private set; }
 
-        public ICollection<CreditCardExpense> Expenses { get; set; }
-
         public CreditCardExpense(string name, string? description, uint installments, decimal value, DateTime date) : base(name, description, value, date)
         {
             Installments = installments;

@@ -14,7 +14,7 @@ public abstract class ExpenseBase : Entity
     public string? Description { get; private set; }
     public decimal Value { get; private set; }
     public DateTime Date { get; private set; }
-    
+
     public ExpenseBase(string name, string? description, decimal value, DateTime date)
     {
         AddNotifications(new Contract<Notification>()

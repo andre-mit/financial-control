@@ -18,10 +18,11 @@ public class User : Entity
     public string? Password { get; private set; }
     public string? Phone { get; private set; }
     public bool PhoneConfirmed { get; private set; }
+    public ICollection<CreditCard> CreditCards { get; private set; }
     public ICollection<Expense> Expenses { get; set; }
     public Role? Role { get; set; }
 
-    public User(string name, string email, Role? role)
+    public User(string name, string email)
     {
         AddNotifications(new Contract<Notification>()
             .Requires()
@@ -31,7 +32,8 @@ public class User : Entity
 
         Name = name;
         Email = email;
-        Role = role;
+        Expenses = new List<Expense>();
+        CreditCards = new List<CreditCard>();
     }
 
     public void ChangeEmail(string email)
@@ -66,7 +68,7 @@ public class User : Entity
         AddNotifications(
            new Contract<Notification>()
            .Requires()
-           .IsPhoneNumber(phone,"Phone", "Telefone Inválido")
+           .IsPhoneNumber(phone, "Phone", "Telefone Inválido")
         );
 
         PhoneConfirmed = false;
@@ -93,5 +95,17 @@ public class User : Entity
         );
 
         Password = BCrypt.Net.BCrypt.HashPassword(password);
+    }
+
+    public void AddExpense(Expense expense)
+    {
+        if (expense.IsValid)
+            Expenses.Add(expense);
+    }
+
+    public void AddCreditCard(CreditCard creditCard)
+    {
+        if (creditCard.IsValid)
+            CreditCards.Add(creditCard);
     }
 }

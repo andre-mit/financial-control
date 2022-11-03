@@ -5,8 +5,10 @@ namespace FinancialControl.Domain.Entities;
 
 public class Role : Entity
 {
-    public string Name { get; set; }
-    public string? Description { get; set; }
+    public string Name { get; private set; }
+    public string? Description { get; private set; }
+
+    public List<User> Users { get; private set; }
 
     public Role(string name, string? description)
     {
@@ -15,5 +17,13 @@ public class Role : Entity
         .IsNotNullOrWhiteSpace(name, "Nome", "Nome inválido"));
         Name = name;
         Description = description;
+
+        Users = new List<User>();
+    }
+
+    public void AddUser(User user)
+    {
+        if(user.IsValid)
+            Users.Add(user);
     }
 }
