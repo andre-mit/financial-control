@@ -22,12 +22,12 @@ namespace FinancialControl.Tests.Repositories
             };
         }
 
-        public Task AddExpense(Guid cardId, Guid userId, CreditCardExpense expense)
+        public Task AddExpenseAsync(Guid cardId, Guid userId, CreditCardExpense expense)
         {
             throw new NotImplementedException();
         }
 
-        public Task Delete(Guid id, Guid userId)
+        public Task DeleteAsync(Guid id, Guid userId)
         {
             throw new NotImplementedException();
         }
@@ -42,12 +42,12 @@ namespace FinancialControl.Tests.Repositories
             throw new NotImplementedException();
         }
 
-        public Task RemoveExpense(Guid cardId, Guid userId, Guid expenseId)
+        public Task RemoveExpenseAsync(Guid cardId, Guid userId, Guid expenseId)
         {
             throw new NotImplementedException();
         }
 
-        public Task Save(CreditCard card)
+        public Task SaveAsync(CreditCard card)
         {
             throw new NotImplementedException();
         }

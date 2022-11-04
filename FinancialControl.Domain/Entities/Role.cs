@@ -1,4 +1,5 @@
-﻿using Flunt.Notifications;
+﻿using FinancialControl.Core.Entities;
+using Flunt.Notifications;
 using Flunt.Validations;
 
 namespace FinancialControl.Domain.Entities;

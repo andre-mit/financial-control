@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FinancialControl.Core.Data;
 
 namespace FinancialControl.Domain.Repositories;
 
-public interface ICreditCardRepository
+public interface ICreditCardRepository : IRepository<CreditCard>
 {
     Task<CreditCard> GetAsync(Guid id, Guid userId);
     Task<IEnumerable<CreditCard>> GetAsync(Guid userId);
-    Task Save(CreditCard card);
-    Task Delete(Guid id, Guid userId);
+    Task DeleteAsync(Guid id, Guid userId);
 
-    Task AddExpense(Guid cardId, Guid userId, CreditCardExpense expense);
-    Task RemoveExpense(Guid cardId, Guid userId, Guid expenseId);
+    Task AddExpenseAsync(Guid cardId, Guid userId, CreditCardExpense expense);
+    Task RemoveExpenseAsync(Guid cardId, Guid userId, Guid expenseId);
 }
