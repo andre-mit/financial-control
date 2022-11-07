@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Domain", "FinancialControl.Domain\src\FinancialControl.Domain.csproj", "{1C30FD2D-108A-4C69-8019-D01ED3030B38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Domain", "src\FinancialControl.Domain\FinancialControl.Domain.csproj", "{1C30FD2D-108A-4C69-8019-D01ED3030B38}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Tests", "FinancialControl.Tests\src\FinancialControl.Tests.csproj", "{F45C8013-3D67-4F88-A545-B40506B6BC77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Tests", "src\FinancialControl.Tests\FinancialControl.Tests.csproj", "{F45C8013-3D67-4F88-A545-B40506B6BC77}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{329E3138-26DD-4B7E-AEF6-5055210D2D77}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Infrastructure.Data", "FinancialControl.Infrastructure.Data\src\FinancialControl.Infrastructure.Data.csproj", "{05CBCA8E-8D99-41BF-A2A2-7493A2988E01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Infrastructure.Data", "src\FinancialControl.Infrastructure.Data\FinancialControl.Infrastructure.Data.csproj", "{05CBCA8E-8D99-41BF-A2A2-7493A2988E01}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{649E7609-7CBA-46C0-B50D-389F8056317F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Core", "FinancialControl.Core\src\FinancialControl.Core.csproj", "{B50753E8-117F-40F9-A252-605E9BD506AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Core", "src\FinancialControl.Core\FinancialControl.Core.csproj", "{B50753E8-117F-40F9-A252-605E9BD506AB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Infrastructure.IoC", "FinancialControl.Infrastructure.IoC\src\FinancialControl.Infrastructure.IoC.csproj", "{513AA0C6-8C7F-4BEE-80CB-A90A8D72AAA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Infrastructure.IoC", "src\FinancialControl.Infrastructure.IoC\FinancialControl.Infrastructure.IoC.csproj", "{513AA0C6-8C7F-4BEE-80CB-A90A8D72AAA4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{49EF3151-BC80-4AD3-8296-1D24B18F16F9}"
 EndProject
@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F2F0C9F5-0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{5CB39D42-5B4A-4A23-AA00-CF4E1DFFB610}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Application", "FinancialControl.Application\src\FinancialControl.Application.csproj", "{F3C3345D-4843-44CA-87D1-5A074E64594F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Application", "src\FinancialControl.Application\FinancialControl.Application.csproj", "{F3C3345D-4843-44CA-87D1-5A074E64594F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{7C1F3C70-24F2-4C4D-B2B2-066C8C779727}"
 EndProject
