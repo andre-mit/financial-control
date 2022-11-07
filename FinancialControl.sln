@@ -3,17 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Domain", "FinancialControl.Domain\FinancialControl.Domain.csproj", "{1C30FD2D-108A-4C69-8019-D01ED3030B38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Domain", "FinancialControl.Domain\src\FinancialControl.Domain.csproj", "{1C30FD2D-108A-4C69-8019-D01ED3030B38}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Tests", "FinancialControl.Tests\FinancialControl.Tests.csproj", "{F45C8013-3D67-4F88-A545-B40506B6BC77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Tests", "FinancialControl.Tests\src\FinancialControl.Tests.csproj", "{F45C8013-3D67-4F88-A545-B40506B6BC77}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{329E3138-26DD-4B7E-AEF6-5055210D2D77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialControl.Infrastructure.Data", "FinancialControl.Infrastructure.Data\FinancialControl.Infrastructure.Data.csproj", "{05CBCA8E-8D99-41BF-A2A2-7493A2988E01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Infrastructure.Data", "FinancialControl.Infrastructure.Data\src\FinancialControl.Infrastructure.Data.csproj", "{05CBCA8E-8D99-41BF-A2A2-7493A2988E01}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{649E7609-7CBA-46C0-B50D-389F8056317F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialControl.Core", "FinancialControl.Core\FinancialControl.Core.csproj", "{B50753E8-117F-40F9-A252-605E9BD506AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Core", "FinancialControl.Core\src\FinancialControl.Core.csproj", "{B50753E8-117F-40F9-A252-605E9BD506AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Infrastructure.IoC", "FinancialControl.Infrastructure.IoC\src\FinancialControl.Infrastructure.IoC.csproj", "{513AA0C6-8C7F-4BEE-80CB-A90A8D72AAA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{49EF3151-BC80-4AD3-8296-1D24B18F16F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{582D5964-4124-4C9E-A03F-DC29B47B04A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F2F0C9F5-0CCE-4744-A05E-671EF9FC2FD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{5CB39D42-5B4A-4A23-AA00-CF4E1DFFB610}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialControl.Application", "FinancialControl.Application\src\FinancialControl.Application.csproj", "{F3C3345D-4843-44CA-87D1-5A074E64594F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{7C1F3C70-24F2-4C4D-B2B2-066C8C779727}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialControl.API", "src\FinancialControl.API\FinancialControl.API.csproj", "{3864655E-FD24-4F91-9E61-5C64688F41BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,13 +53,30 @@ Global
 		{B50753E8-117F-40F9-A252-605E9BD506AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B50753E8-117F-40F9-A252-605E9BD506AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B50753E8-117F-40F9-A252-605E9BD506AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{513AA0C6-8C7F-4BEE-80CB-A90A8D72AAA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{513AA0C6-8C7F-4BEE-80CB-A90A8D72AAA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{513AA0C6-8C7F-4BEE-80CB-A90A8D72AAA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{513AA0C6-8C7F-4BEE-80CB-A90A8D72AAA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3C3345D-4843-44CA-87D1-5A074E64594F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3C3345D-4843-44CA-87D1-5A074E64594F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C3345D-4843-44CA-87D1-5A074E64594F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3C3345D-4843-44CA-87D1-5A074E64594F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3864655E-FD24-4F91-9E61-5C64688F41BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3864655E-FD24-4F91-9E61-5C64688F41BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3864655E-FD24-4F91-9E61-5C64688F41BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3864655E-FD24-4F91-9E61-5C64688F41BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{05CBCA8E-8D99-41BF-A2A2-7493A2988E01} = {329E3138-26DD-4B7E-AEF6-5055210D2D77}
+		{1C30FD2D-108A-4C69-8019-D01ED3030B38} = {49EF3151-BC80-4AD3-8296-1D24B18F16F9}
+		{F45C8013-3D67-4F88-A545-B40506B6BC77} = {582D5964-4124-4C9E-A03F-DC29B47B04A8}
+		{05CBCA8E-8D99-41BF-A2A2-7493A2988E01} = {F2F0C9F5-0CCE-4744-A05E-671EF9FC2FD6}
 		{B50753E8-117F-40F9-A252-605E9BD506AB} = {649E7609-7CBA-46C0-B50D-389F8056317F}
+		{513AA0C6-8C7F-4BEE-80CB-A90A8D72AAA4} = {329E3138-26DD-4B7E-AEF6-5055210D2D77}
+		{F3C3345D-4843-44CA-87D1-5A074E64594F} = {5CB39D42-5B4A-4A23-AA00-CF4E1DFFB610}
+		{3864655E-FD24-4F91-9E61-5C64688F41BC} = {7C1F3C70-24F2-4C4D-B2B2-066C8C779727}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67F4FCD6-B73E-4263-BE49-A91D03EF0B2A}

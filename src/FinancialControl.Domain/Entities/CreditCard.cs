@@ -19,7 +19,7 @@ namespace FinancialControl.Domain.Entities
 
         public IReadOnlyCollection<CreditCardExpense> Expenses => _expenses.ToArray();
 
-        public User User { get; private set; }
+        public User? User { get; private set; }
 
         public CreditCard(string name, byte paymentDay, byte closeDay, User user)
         {

@@ -21,6 +21,7 @@
   <ItemGroup>
     <Folder Include="Mappings\" />
     <Folder Include="Repository\" />
+    <Folder Include="Utils\DateTimeConverters\" />
   </ItemGroup>
 
   <ItemGroup>

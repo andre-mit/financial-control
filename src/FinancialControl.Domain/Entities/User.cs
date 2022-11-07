@@ -13,28 +13,32 @@ namespace FinancialControl.Domain.Entities;
 
 public class User : Entity
 {
+    private readonly IList<CreditCard> _creditCards;
+    private readonly IList<Expense> _expenses;
+    
     public string Name { get; private set; }
     public string Email { get; private set; }
     public bool EmailConfirmed { get; private set; }
     public string? Password { get; private set; }
     public string? Phone { get; private set; }
     public bool PhoneConfirmed { get; private set; }
-    public ICollection<CreditCard> CreditCards { get; private set; }
-    public ICollection<Expense> Expenses { get; set; }
-    public Role? Role { get; set; }
+    public IReadOnlyCollection<CreditCard> CreditCards => _creditCards.ToArray();
+    public IReadOnlyCollection<Expense> Expenses => _expenses.ToArray();
+    public Role? Role { get; private set; }
 
     public User(string name, string email)
     {
         AddNotifications(new Contract<Notification>()
             .Requires()
             .IsNotNullOrWhiteSpace(name, "Nome", "Nome inválido")
+            .IsLowerOrEqualsThan(name, 100, "Nome", "Nome deve ter no máximo 100 caracteres")
             .IsEmail(email, "Email", "Email inválido")
         );
 
         Name = name;
         Email = email;
-        Expenses = new List<Expense>();
-        CreditCards = new List<CreditCard>();
+        _expenses = new List<Expense>();
+        _creditCards = new List<CreditCard>();
     }
 
     public void ChangeEmail(string email)
@@ -101,12 +105,12 @@ public class User : Entity
     public void AddExpense(Expense expense)
     {
         if (expense.IsValid)
-            Expenses.Add(expense);
+            _expenses.Add(expense);
     }
 
     public void AddCreditCard(CreditCard creditCard)
     {
         if (creditCard.IsValid)
-            CreditCards.Add(creditCard);
+            _creditCards.Add(creditCard);
     }
 }

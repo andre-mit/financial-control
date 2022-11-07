@@ -1,7 +1,9 @@
 ﻿using FinancialControl.Core.Data;
 using FinancialControl.Core.Entities;
 using FinancialControl.Domain.Entities;
+using FinancialControl.Infrastructure.Data.Utils.DateTimeConverters;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace FinancialControl.Infrastructure.Data;
 
@@ -39,6 +41,24 @@ public class ApplicationDbContext : DbContext, IUnitOfWork
         }
 
         return base.SaveChanges();
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+    }
+
+    protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+    {
+        base.ConfigureConventions(configurationBuilder);
+        
+        configurationBuilder.Properties<DateOnly>().HaveConversion<DateOnlyConverter, DateOnlyComparer>()
+            .HaveColumnType("date");
+
+        configurationBuilder.Properties<TimeOnly>().HaveConversion<TimeOnlyConverter>()
+            .HaveColumnType("time");
     }
 
     public bool Commit()
