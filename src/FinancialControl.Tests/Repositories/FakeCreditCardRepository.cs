@@ -1,4 +1,5 @@
-﻿using FinancialControl.Domain.Entities;
+﻿using FinancialControl.Core.Data;
+using FinancialControl.Domain.Entities;
 using FinancialControl.Domain.Repositories;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,9 @@ namespace FinancialControl.Tests.Repositories
 {
     internal class FakeCreditCardRepository : ICreditCardRepository
     {
-        public List<CreditCard> CreditCards { get; private set; }
+        public List<CreditCard>? CreditCards { get; private set; }
+
+        public IUnitOfWork UnitOfWork => throw new NotImplementedException();
 
         public FakeCreditCardRepository()
         {
@@ -50,6 +53,12 @@ namespace FinancialControl.Tests.Repositories
         public Task SaveAsync(CreditCard card)
         {
             throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            UnitOfWork.Dispose();
+            CreditCards = null;
         }
     }
 }
