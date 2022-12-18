@@ -11,15 +11,15 @@ public class ApplicationDbContext : DbContext, IUnitOfWork
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) {}
 
-    public DbSet<User> Users { get; set; }
+    public DbSet<User> Users => Set<User>();
+
+    public DbSet<Role> Roles => Set<Role>();
     
-    public DbSet<Role> Roles { get; set; }
+    public DbSet<Expense> Expenses => Set<Expense>();
     
-    public DbSet<Expense> Expenses { get; set; }
+    public DbSet<CreditCard> CreditCards => Set<CreditCard>();
     
-    public DbSet<CreditCard> CreditCards { get; set; }
-    
-    public DbSet<CreditCardExpense> CreditCardExpenses { get; set; }
+    public DbSet<CreditCardExpense> CreditCardExpenses => Set<CreditCardExpense>();
 
     public override int SaveChanges()
     {

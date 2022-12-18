@@ -4,10 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FinancialControl.Infrastructure.Data.Mappings;
 
-public class UserMapping : IEntityTypeConfiguration<User>
+public class UserMapping : BaseMapping<User>, IEntityTypeConfiguration<User> 
 {
-    public void Configure(EntityTypeBuilder<User> builder)
+    public override void Configure(EntityTypeBuilder<User> builder)
     {
+        base.Configure(builder);
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
         builder.HasIndex(x => x.Email).IsUnique();

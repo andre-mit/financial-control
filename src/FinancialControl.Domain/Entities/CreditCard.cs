@@ -21,6 +21,11 @@ namespace FinancialControl.Domain.Entities
 
         public User? User { get; private set; }
 
+        public CreditCard()
+        {
+            
+        }
+
         public CreditCard(string name, byte paymentDay, byte closeDay, User user)
         {
             AddNotifications(new Contract<Notification>()
